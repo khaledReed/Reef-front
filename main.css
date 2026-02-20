@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+
+/* ── Full-page gradient (one continuous flow, no section borders) ── */
+.home-page-bg {
+  background: linear-gradient(180deg,
+    #E8ECFA 0%,
+    #DCE2F5 10%,
+    #D2DAEC 20%,
+    #AFB9E6 32%,
+    #8B98D4 45%,
+    #505FAF 62%,
+    #2D3A8C 78%,
+    #1A2672 90%,
+    #151B55 100%);
+  min-height: 100vh;
+}
+
+/* ── Hero blob ─────────────────────────────────────────── */
+.hero-blob {
+  position: absolute;
+  top: -12%;
+  right: -8%;
+  width: 65%;
+  height: 115%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-blob::before,
+.hero-blob::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-blob::before {
+  width: 105%;
+  height: 85%;
+  top: 2%;
+  right: -12%;
+  background: radial-gradient(
+    ellipse at 45% 45%,
+    rgba(50, 70, 200, 0.55) 0%,
+    rgba(65, 85, 210, 0.4) 25%,
+    rgba(40, 55, 170, 0.22) 50%,
+    transparent 75%
+  );
+  filter: blur(55px);
+}
+
+.hero-blob::after {
+  width: 50%;
+  height: 50%;
+  top: 12%;
+  right: 8%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(90, 120, 240, 0.6) 0%,
+    rgba(60, 85, 210, 0.45) 35%,
+    rgba(50, 70, 190, 0.2) 60%,
+    transparent 75%
+  );
+  filter: blur(45px);
+}
+
+/* ── Stats (transparent; page gradient shows through) ───── */
+.stats-gradient {
+  background: transparent;
+}
+
+/* ── Services (transparent; page gradient shows through) ─ */
+.services-gradient {
+  background: transparent;
+}
+
+/* ── Dark sections (transparent; page gradient shows through) ─ */
+.dark-section-gradient {
+  background: transparent;
+}
+
+/* ── Service card ──────────────────────────────────────── */
+.service-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ── Projects section (transparent; page gradient shows through) ── */
+.projects-section {
+  background: transparent;
+}
+
+.projects-layout {
+  width: 100%;
+}
+
+/* Vertical strips: transparent, no borders */
+.projects-strip {
+  background: transparent;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.projects-strip-left {
+  width: 4.5rem;
+  min-width: 4.5rem;
+}
+
+.projects-strip-right {
+  width: 4rem;
+  min-width: 4rem;
+}
+
+.projects-strips-right {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Left strip: text rotated 90° counter-clockwise (reads upward on left edge) */
+.project-tab-left {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.project-tab-left:hover,
+.project-tab-left.active {
+  color: #ffffff;
+}
+
+.project-tab-left.active {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Right strips: text vertical (90° clockwise) */
+.project-tab-right {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.project-tab-right:hover,
+.project-tab-right.active {
+  color: #ffffff;
+}
+
+.project-tab-right.active {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Legacy project-tab class (if used elsewhere) */
+.project-tab {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* ── Contact form ──────────────────────────────────────── */
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 14px 0;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-input:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── FAQ accordion ─────────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding-bottom: 20px;
+}
+
+.faq-toggle {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-toggle {
+  transform: rotate(45deg);
+}
+
+/* ── Navbar scroll effect ──────────────────────────────── */
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Mobile nav overlay ────────────────────────────────── */
+.mobile-nav {
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+/* ── Trust features (no section borders) ────────────────── */
+.trust-feature {
+  transition: background-color 0.3s ease;
+}
+
+.trust-feature:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ── CTA buttons ───────────────────────────────────────── */
+.btn-primary {
+  background-color: #1b2066;
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #2a3590;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: inline-block;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-submit {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 12px 48px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Smooth scroll ─────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection ─────────────────────────────────────────── */
+::selection {
+  background-color: rgba(59, 79, 191, 0.25);
+  color: #1b2066;
+}
+
+/* ── Scrollbar (subtle) ────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1442;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3590;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4fbf;
+}
+
+/* ── Project image placeholder ─────────────────────────── */
+.project-img-placeholder {
+  background: linear-gradient(135deg, #0a1035 0%, #162050 40%, #1a3070 70%, #0f1840 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 80%, rgba(80, 160, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 30% 40%, rgba(100, 140, 220, 0.1) 0%, transparent 50%);
+}
+
+/* ── Snowflake decorative pulse ────────────────────────── */
+@keyframes subtlePulse {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 1; }
+}
+
+.snowflake-deco {
+  animation: subtlePulse 4s ease-in-out infinite;
+}
+
+/* ── Responsive adjustments ────────────────────────────── */
+@media (max-width: 767px) {
+  .hero-blob {
+    width: 95%;
+    top: -8%;
+    right: -25%;
+    opacity: 0.75;
+  }
+
+  .hero-blob::before {
+    filter: blur(40px);
+  }
+
+  .hero-blob::after {
+    filter: blur(35px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-blob {
+    width: 72%;
+    right: -12%;
+  }
+}
