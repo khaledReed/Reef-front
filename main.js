@@ -3,7 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initFaqAccordion();
   initProjectTabs();
+  initProjectImages();
 });
+
+/* ── Project images: try .png if .jpg fails ────────────── */
+function initProjectImages() {
+  document.querySelectorAll(".project-img").forEach((img) => {
+    img.addEventListener("error", function onError() {
+      const src = this.getAttribute("src") || "";
+      if (src.endsWith(".jpg")) {
+        this.setAttribute("src", src.replace(/\.jpg$/i, ".png"));
+      } else {
+        this.classList.add("failed");
+      }
+    });
+  });
+}
 
 /* ── Navbar scroll effect ──────────────────────────────── */
 function initNavbar() {
